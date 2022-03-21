@@ -1,0 +1,46 @@
+<div class="container d-flex flex-wrap justify-content-center">
+  <div>
+    <div class="card me-5" style="width: 23rem">
+      <img
+        class="card-img-top"
+        src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+        alt="Card image"
+        style="width: 100%"
+      />
+      <div class="card-body">
+        <p class="card-text"><b>ID:</b> {{ user?.id }}</p>
+        <p class="card-text"><b>Name:</b> {{ user?.name }}</p>
+        <p class="card-text"><b>Username:</b> {{ user?.username }}</p>
+        <p class="card-text"><b>Email:</b> {{ user?.email }}</p>
+        <p class="card-text"><b>Street: </b>{{ user?.address?.street }}</p>
+        <p class="card-text"><b>suite:</b> {{ user?.address?.suite }}</p>
+        <p class="card-text"><b>city:</b> {{ user?.address?.city }}</p>
+        <p class="card-text"><b>zipcode:</b> {{ user?.address?.zipcode }}</p>
+        <p class="card-text">
+          <b>Location:</b>
+          <span> lat: {{ user?.address?.geo.lat }} </span> lng:
+          {{ user?.address?.geo.lng }}
+        </p>
+        <p class="card-text"><b>phone:</b> {{ user?.phone }}</p>
+        <p class="card-text"><b>website:</b> {{ user?.website }}</p>
+        <p class="card-text"><b>company name:</b> {{ user?.company?.name }}</p>
+        <p class="card-text">
+          <b>company catch phrase:</b> {{ user?.company?.catchPhrase }}
+        </p>
+        <p class="card-text">
+          <b>company description:</b> {{ user?.company?.bs }}
+        </p>
+
+        <a [routerLink]="['']" class="btn btn-outline-success">Go Back</a>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      [routerLink]="['/users', user?.id, 'posts']"
+      class="btn btn-success"
+    >
+      User Posts
+    </button>
+  </div>
+</div>
